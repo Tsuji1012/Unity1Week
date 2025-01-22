@@ -149,5 +149,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 6881546631501858967}
-  countDown: 30
+  countDown: 10
   swi: 1

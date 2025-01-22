@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RendaGame : MonoBehaviour
 {
-    private GameObject subgameGeneratorObj;
-    private SubGameGenerator subGameGenerator;
+    private GameObject subGame_ControllerObj;
+    private SubGame_Controller subGame_Controller;
 
     [SerializeField] private int rendaNum;
 
@@ -14,8 +14,8 @@ public class RendaGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        subgameGeneratorObj = GameObject.Find("SubGameGenerator");
-        subGameGenerator = subgameGeneratorObj.GetComponent<SubGameGenerator>();
+        subGame_ControllerObj = GameObject.Find("SubGame_Controller");
+        subGame_Controller = subGame_ControllerObj.GetComponent<SubGame_Controller>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class RendaGame : MonoBehaviour
         // 連打しなければならない回数が0になればミニゲームを削除
         if (rendaNum <= 0)
         {
-            subGameGenerator.DestroySubGame(false);
+            subGame_Controller.DestroySubGame(false);
         }
     }
 

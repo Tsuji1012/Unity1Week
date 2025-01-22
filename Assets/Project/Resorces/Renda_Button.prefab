@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6563954834347501026}
   - component: {fileID: 1414730176366238470}
   m_Layer: 5
-  m_Name: RendaButton
+  m_Name: Renda_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

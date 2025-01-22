@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubGameGenerator : MonoBehaviour
+public class SubGame_Controller : MonoBehaviour
 {
     [SerializeField] private Starter starter;
     [SerializeField] private BeamShooter beamShooter;
-    [SerializeField] private NagaoshiGameGenerator nagaoshiGameGenerator;
-    [SerializeField] private RendaGameGenerator rendaGameGenerator;
+    [SerializeField] private NagaoshiGame_Generator nagaoshiGame_Generator;
+    [SerializeField] private RendaGame_Generator rendaGame_Generator;
+    [SerializeField] private GameObject parent;
+    [SerializeField] private GameObject frame;
 
     public List<GameObject> instanceList = new List<GameObject>();
     public bool swi = true;
@@ -22,21 +24,23 @@ public class SubGameGenerator : MonoBehaviour
         if (starter.startSwi == true && swi == true)
         {
             swi = false;
+            OnFrame();
             subGameNum = Random.Range(1, 3);    // ミニゲームの種類を決定
 
             // ミニゲームのスクリプトをオンにする
             switch (subGameNum)
             {
                 case 1:
-                    nagaoshiGameGenerator.swi = true;
+                    nagaoshiGame_Generator.swi = true;
                     break;
                 case 2:
-                    rendaGameGenerator.swi = true;
+                    rendaGame_Generator.swi = true;
                     break;
             }
         }
     }
 
+    // 完了したミニゲームの削除
     public void DestroySubGame(bool timeout)
     {
         if (timeout == false)
@@ -44,7 +48,7 @@ public class SubGameGenerator : MonoBehaviour
             swi = true;
         }
 
-        beamShooter.StretchParticle();    // ミニゲーム終了後、ビームの距離を伸ばす
+        beamShooter.StretchParticle();    // ミニゲームが完了したら、ビームの距離を伸ばす
 
         // ミニゲーム用に生成したオブジェクトを削除
         foreach (GameObject instance in instanceList)
@@ -52,5 +56,17 @@ public class SubGameGenerator : MonoBehaviour
             Destroy(instance);
         }
         instanceList.Clear();
+    }
+
+    // ミニゲームの背景を表示
+    public void OnFrame()
+    {
+        frame.SetActive(true);
+    }
+
+    // ミニゲームの背景を削除
+    public void OffFrame()
+    {
+        frame.SetActive(false);
     }
 }

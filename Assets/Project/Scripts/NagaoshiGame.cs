@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class NagaoshiGame : MonoBehaviour
 {
-    private GameObject subgameGeneratorObj;
-    private SubGameGenerator subGameGenerator;
+    private GameObject subGame_ControllerObj;
+    private SubGame_Controller subGame_Controller;
     private new AudioSource audio;
     [SerializeField] private AudioClip nagaoshiSound;
 
@@ -16,21 +16,20 @@ public class NagaoshiGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        subgameGeneratorObj = GameObject.Find("SubGameGenerator");
-        subGameGenerator = subgameGeneratorObj.GetComponent<SubGameGenerator>();
+        subGame_ControllerObj = GameObject.Find("SubGame_Controller");
+        subGame_Controller = subGame_ControllerObj.GetComponent<SubGame_Controller>();
 
         audio = GetComponent<AudioSource>();
 
         scale = this.transform.localScale;
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (Input.GetMouseButton(0))
         {
             // í∑âüÇµÇµÇƒÇ¢ÇÈä‘ÅAOutCircleÇè¨Ç≥Ç≠ÇµÇƒÇ¢Ç≠
-            if (scale.x > 0.2f)
+            if (scale.x > 2.0f)
             {
                 if (nagaoshiSwi == true)
                 {
@@ -38,13 +37,13 @@ public class NagaoshiGame : MonoBehaviour
                     audio.PlayOneShot(nagaoshiSound);
                 }
 
-                scale.x -= 0.0028f;
-                scale.y -= 0.0028f;
+                scale.x -= 0.028f;
+                scale.y -= 0.028f;
 
                 this.transform.localScale = scale;
             } else    // è¨Ç≥Ç≠Ç»Ç¡ÇΩÇÁÉ~ÉjÉQÅ[ÉÄÇçÌèú
             {
-                subGameGenerator.DestroySubGame(false);
+                subGame_Controller.DestroySubGame(false);
             }
         } else    // í∑âüÇµÇ™ìrê‚Ç¶ÇΩÇÁå¯â âπÇÃçƒê∂Çé~ÇﬂÇÈ
         {

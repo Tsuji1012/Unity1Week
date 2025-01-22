@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starter: {fileID: 272408489}
-  ressetButtonGenerator: {fileID: 1724117413}
+  ressetButton_Generator: {fileID: 0}
   parent: {fileID: 1219627487}
   winText: {fileID: 3215538073370389458, guid: 9074d9edfc25d8b41a84b3434aa9f0d5, type: 3}
   LoseText: {fileID: 8785914900213719032, guid: 8f2139b81e6821f44aff55954dfdbd50, type: 3}
@@ -17585,7 +17585,7 @@ GameObject:
   - component: {fileID: 1155157304}
   - component: {fileID: 1155157305}
   m_Layer: 0
-  m_Name: RendaGameGenerator
+  m_Name: RendaGame_Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17618,7 +17618,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77880ad49788efb488629ef364231baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frame: {fileID: 7807136024159398731, guid: 3d4d07e800071be45b3134ffabbc3b51, type: 3}
   RendaButton: {fileID: 6563954834347501028, guid: babdd72b0eee80744b135ae3a4d5a9b4, type: 3}
   RendaText: {fileID: 1799888443803916403, guid: 64985615c0a98cd4f842b766f5125c49, type: 3}
   parent: {fileID: 1219627487}
@@ -17714,7 +17713,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3791673349673502633}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26743,7 +26743,7 @@ GameObject:
   - component: {fileID: 1724117414}
   - component: {fileID: 1724117413}
   m_Layer: 0
-  m_Name: RessetButtonGenerator
+  m_Name: RessetButton_Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26789,7 +26789,7 @@ GameObject:
   - component: {fileID: 1779185063}
   - component: {fileID: 1779185062}
   m_Layer: 0
-  m_Name: CountDownGenerator
+  m_Name: CountDown_Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36964,7 +36964,7 @@ GameObject:
   - component: {fileID: 2079864877}
   - component: {fileID: 2079864878}
   m_Layer: 0
-  m_Name: SubGameGenerator
+  m_Name: SubGame_Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37001,13 +37001,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starter: {fileID: 272408489}
   beamShooter: {fileID: 498300692}
-  nagaoshiGameGenerator: {fileID: 1549879255569011740}
-  rendaGameGenerator: {fileID: 1155157305}
-  instant1: {fileID: 0}
-  instant2: {fileID: 0}
-  instant3: {fileID: 0}
-  instant4: {fileID: 0}
+  nagaoshiGame_Generator: {fileID: 0}
+  rendaGame_Generator: {fileID: 0}
+  parent: {fileID: 1219627487}
+  frame: {fileID: 3902858371943712675}
+  instanceList: []
   swi: 1
+--- !u!222 &660587365847922630
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3902858371943712675}
+  m_CullTransparentMesh: 1
 --- !u!1 &1549879255569011739
 GameObject:
   m_ObjectHideFlags: 0
@@ -37019,7 +37026,7 @@ GameObject:
   - component: {fileID: 1549879255569011741}
   - component: {fileID: 1549879255569011740}
   m_Layer: 0
-  m_Name: NagaoshiGenerator
+  m_Name: Nagaoshi_Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37037,10 +37044,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d084fbeeb7ffb3a428933ed890c7f7d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frame: {fileID: 7807136024159398731, guid: 3d4d07e800071be45b3134ffabbc3b51, type: 3}
-  NagaoshiOutCircle: {fileID: 3569029293350775030, guid: 810fe40d9b989844c89ec5061e9e84eb, type: 3}
-  NagaoshiInCircle: {fileID: 5552160442428762252, guid: 7154dee9d7d09514083d722c17dd5213, type: 3}
-  NagaoshiText: {fileID: 1799888443803916403, guid: c33e9717fd444d94fb2e2bb6ee184ff6, type: 3}
+  Nagaoshi_OutCircle: {fileID: 4980283570643195207, guid: ed03bdcaa188e7b4f94e379ae3294c1e, type: 3}
+  Nagaoshi_InCircle: {fileID: 4980283570643195207, guid: 1e1067099e6542748b17b404f56c5dc7, type: 3}
+  Nagaoshi_Text: {fileID: 1799888443803916403, guid: c33e9717fd444d94fb2e2bb6ee184ff6, type: 3}
   parent: {fileID: 1219627487}
   swi: 0
 --- !u!4 &1549879255569011741
@@ -37058,3 +37064,71 @@ Transform:
   m_Father: {fileID: 2079864877}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -86.5, y: 0, z: 0}
+--- !u!114 &2340425887549348210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3902858371943712675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: be21c54ff476c2549a225ea4e04d1089, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!224 &3791673349673502633
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3902858371943712675}
+  m_LocalRotation: {x: 0.00000004470348, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0038850186}
+  m_LocalScale: {x: 15, y: 9.000003, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1219627491}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -69.999954}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &3902858371943712675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3791673349673502633}
+  - component: {fileID: 660587365847922630}
+  - component: {fileID: 2340425887549348210}
+  m_Layer: 5
+  m_Name: Frame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0

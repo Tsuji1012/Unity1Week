@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RessetButtonGenerator : MonoBehaviour
+public class RessetButton_Generator : MonoBehaviour
 {
     [SerializeField] private GameObject ressetButton;
     [SerializeField] private GameObject parent;
