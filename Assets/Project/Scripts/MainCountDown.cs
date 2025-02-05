@@ -25,7 +25,7 @@ public class MainCountDown : MonoBehaviour
         subGame_ControllerObj = GameObject.Find("SubGame_Controller");
         subGame_Controller = subGame_ControllerObj.GetComponent<SubGame_Controller>();
 
-        bgm_ControllarObj = GameObject.Find("BGM_Controllar");
+        bgm_ControllarObj = GameObject.Find("BGM_Main");
         bgm_Controllar = bgm_ControllarObj.GetComponent<BGM_Controllar>();
 
         particle_ControllerObj = GameObject.Find("Particle_Controller");

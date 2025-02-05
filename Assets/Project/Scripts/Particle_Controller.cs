@@ -14,8 +14,9 @@ public class Particle_Controller : MonoBehaviour
     private IEnumerator StartParticle()
     {
         yield return new WaitForSeconds(2.0f);
-        beamShooter.OnParticle();
-        beamAccumurater.OnParticle();
         beamAccumurater2.OnParticle();
+        yield return new WaitForSeconds(1.8f);
+        beamAccumurater.OnParticle();
+        beamShooter.OnParticle();
     }
 }

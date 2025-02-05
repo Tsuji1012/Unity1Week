@@ -4,30 +4,16 @@ using UnityEngine;
 
 public class BGM_Controllar : MonoBehaviour
 {
-    [SerializeField] private Starter starter;
-
-    private new AudioSource audio;
-    [SerializeField] private AudioClip bgm;
-    private bool swi = true;
+    [SerializeField] private AudioSource audio;
 
 
-    // Start is called before the first frame update
-    void Start()
+
+    public IEnumerator FadeOut()
     {
-        audio = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // BGP‚ðÁ‹ŽAŽŸ‚ÌBGP‚ðÄ¶
-        if (starter.startSwi == true && swi == true)
+        while(audio.volume > 0)
         {
-            swi = false;
-
-            audio.Stop();
-            audio.clip = bgm;
-            audio.Play();
+            audio.volume -= 0.01f;
+            yield return new WaitForSeconds(0.03f);
         }
     }
 }

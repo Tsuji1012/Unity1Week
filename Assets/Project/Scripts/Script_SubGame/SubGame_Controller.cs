@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SubGame_Controller : MonoBehaviour
 {
-    [SerializeField] private Starter starter;
     [SerializeField] private BeamShooter beamShooter;
     [SerializeField] private NagaoshiGame_Generator nagaoshiGame_Generator;
     [SerializeField] private RendaGame_Generator rendaGame_Generator;
@@ -21,7 +20,7 @@ public class SubGame_Controller : MonoBehaviour
     void Update()
     {
         // ゲームスタートしたら開始
-        if (starter.startSwi == true && swi == true)
+        if (swi)
         {
             swi = false;
             OnFrame();
